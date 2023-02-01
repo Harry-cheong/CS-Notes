@@ -1,0 +1,37 @@
+____________________________________________________
+____________________ JavaScript ____________________
+| JavaScript |
+
+    1. High-Level
+    - Do not need to manage resources 
+    e.g. Python, JS 
+
+    2. Garbage-collected
+    - Cleaning the memory so we don't have to
+
+    3. Interpreted or just-in-time complied
+    - higher abstraction
+
+    4. Multi-paradigm 
+    - An approach and mindset of structuring code, which will direct your coding sytle and technique 
+    - Paradigms consist of Procedural Programming, Object Oriented Programming and Functional Programming
+
+    5. Protype-based object-Oriented
+    <> Object Oriented Programming
+
+    6. First-class functions
+    - functions are simply treated as variables
+
+    7. Dynamic
+    - data types are automatically determined during runtime
+
+    8. Single-threaded
+    - JavaScript runs in one single thread, so it can only do one thing at a time
+
+    9. Non-blocking event loop
+    - an event loop takes long running tasks, executes them in one "background", and puts them back in the main thread once they are finished.
+    
+    
+Resources
+    1. MDN Web Docs 
+    [https://developer.mozilla.org/en-US/docs/Web/JavaScript]

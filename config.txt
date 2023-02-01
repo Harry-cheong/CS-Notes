@@ -1,0 +1,3 @@
+Path = C:\Users\harry\Desktop\Productivity resources\Notes Manager\testfile.txt
+Chapter Template = ____________________________________________________
+binSize = 20
