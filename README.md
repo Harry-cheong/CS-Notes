@@ -1,6 +1,6 @@
 # Notes Drive
 
-Computer Science is a complex field, with topics ranging from computer engineering, software engineering, cybersecurity, AI and I'm sure many more. For every computer enthusiasts, the challenge lies in learning and retaining all these information. The solution, is as always, better software 🤨.
+Computer Science is a complex field, with topics ranging from computer engineering, software engineering, cybersecurity, AI and many more. For every computer enthusiasts, the challenge lies in learning and retaining all these information. The solution is, as always, better software 🤨.
 
 ## CLI
 
