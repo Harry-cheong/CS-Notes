@@ -1,9 +1,9 @@
-# \***\*\*\*\*\***\_\_\_\***\*\*\*\*\*** HTML \***\*\*\*\*\***\_\_\_\***\*\*\*\*\***
+# HTML
 
 - stands for Hyper Text Mark-up Language
 - ! + Tab automatically creates a html doc w basic config
 
-## **\*\*\*\***\_\_**\*\*\*\*** Basic Structure **\*\*\*\***\_\_**\*\*\*\***
+## Basic Structure
 
 ```html
 <!DOCTYPE html>
@@ -21,9 +21,9 @@
 </html>
 ```
 
-| [🌟] Head |
+### | [🌟] Head |
 
-[~Syntax~]
+[*Syntax*]
 
 ```html
 <head>
@@ -31,11 +31,11 @@
 </head>
 ```
 
-| [🌟] Body |
+### | [🌟] Body |
 
 - what is visible on the webpage
 
-[~Syntax~]
+[*Syntax*]
 
 ```html
 <body>
@@ -55,7 +55,7 @@
 
 | [🌟] Attributes |
 
-[~Syntax~]
+[*Syntax*]
 `<a...> </a...>`
 
 1. Links
@@ -69,12 +69,12 @@
    - Specify file path
      `<img src="...">`
 
-## **\*\*\*\***\_\_**\*\*\*\*** Classes and IDs **\*\*\*\***\_\_**\*\*\*\***
+## Classes and IDs
 
 - Crucial for identifying elements & DOM Manipulation
 - IDs has to be unique while classes can be used over and over again
 
-e.g. [Classes]
+e.g. [*Classes*]
 
 ```html
   <p class = "second>
@@ -82,13 +82,13 @@ e.g. [Classes]
   </p>
 ```
 
-e.g. [IDs]
+e.g. [*IDs*]
 
 ```html
 <img id="course-image" src="..." /> />
 ```
 
-## **\*\*\*\***\_\_**\*\*\*\*** Basic Features **\*\*\*\***\_\_**\*\*\*\***
+## Basic Features
 
 1. Generic box
    `<div> </div>`
@@ -99,9 +99,11 @@ e.g. [IDs]
 3. Inputs
    `<input type="text" placeholder="Your name" />`
 
-## \***\*\*\*\*\***\_\_\***\*\*\*\*\*** Styling \***\*\*\*\*\***\_\_\***\*\*\*\*\***
+## Styling
 
 - To link html to css : `<link href = "style.css" rel="stylesheet" >`
+
+[*Syntax*]
 
 ```html
 <style>
@@ -111,7 +113,7 @@ e.g. [IDs]
 </style>
 ```
 
-| [🌟] Text Styles |
+### | [🌟] Text Styles |
 
 1. `color`
 
@@ -125,15 +127,17 @@ e.g. [IDs]
    - text-decoration-line: `underline` `overline` `line-through`
    - text-decoration-style: `solid` `wavy` `double` `dotted` `dashed`
 
-| [🌟] Selector |
+### | [🌟] Selector |
 
 1. `body{...}`
 2. `h1{...}`
 3. `\* {...}`
 
-| [🌟] [🌟] Background |
+### | [🌟] [🌟] Background |
 
 - Creates a box with a background
+
+[*Syntax*]
 
 ```css
 .background {
@@ -160,8 +164,9 @@ e.g. [IDs]
 4. `background-size: auto auto`
    - scales the image
 
-| [🌟] [🌟] Element Display |
+### | [🌟] [🌟] Element Display |
 
+[*Syntax*]
 `display: value`
 
 1. inline
@@ -200,7 +205,9 @@ e.g. [IDs]
 
    - hide display
 
-| [🌟] [🌟] Position |
+### | [🌟] [🌟] Position |
+
+[*Syntax*]
 
 ```css
 .position {
@@ -218,9 +225,11 @@ e.g. [IDs]
 2. absolute
    - positioned relative to its first positioned
 
-| [🌟] [🌟] Useful Snippets |
+### | [🌟] [🌟] Useful Snippets |
 
 1. Centralising a box relative to another element
+
+   [*Syntax*]
 
    ```css
    .center {
@@ -231,7 +240,7 @@ e.g. [IDs]
    }
    ```
 
-## **\*\*\*\***\_**\*\*\*\*** The CSS Box Model **\*\*\*\***\_**\*\*\*\***
+## The CSS Box Model
 
 - Any webpage can be broken down into boxes
 - Each box has 5 properties: content, padding, border, margin and fill area
