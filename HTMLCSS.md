@@ -21,7 +21,7 @@
 </html>
 ```
 
-### | [🌟] Head |
+### [🌟] Head
 
 [*Syntax*]
 
@@ -31,7 +31,7 @@
 </head>
 ```
 
-### | [🌟] Body |
+### [🌟] Body
 
 - what is visible on the webpage
 
@@ -43,17 +43,17 @@
 </body>
 ```
 
-| [🌟] Paragraph |
+### [🌟] Paragraph
 
 - `<p></p>`
 - for including text on the webpage
 
-| [🌟] Headers |
+### [🌟] Headers
 
 - `<h1> </h1>`
 - p1-6; decreasing size of font on webpage
 
-| [🌟] Attributes |
+### [🌟] Attributes
 
 [*Syntax*]
 `<a...> </a...>`
@@ -113,7 +113,7 @@ e.g. [*IDs*]
 </style>
 ```
 
-### | [🌟] Text Styles |
+### [🌟] Text Styles
 
 1. `color`
 
@@ -127,13 +127,13 @@ e.g. [*IDs*]
    - text-decoration-line: `underline` `overline` `line-through`
    - text-decoration-style: `solid` `wavy` `double` `dotted` `dashed`
 
-### | [🌟] Selector |
+### [🌟] Selector
 
 1. `body{...}`
 2. `h1{...}`
 3. `\* {...}`
 
-### | [🌟] [🌟] Background |
+### [🌟] [🌟] Background
 
 - Creates a box with a background
 
@@ -164,7 +164,7 @@ e.g. [*IDs*]
 4. `background-size: auto auto`
    - scales the image
 
-### | [🌟] [🌟] Element Display |
+### [🌟] [🌟] Element Display
 
 [*Syntax*]
 `display: value`
@@ -205,7 +205,7 @@ e.g. [*IDs*]
 
    - hide display
 
-### | [🌟] [🌟] Position |
+### [🌟] [🌟] Position
 
 [*Syntax*]
 
@@ -225,7 +225,7 @@ e.g. [*IDs*]
 2. absolute
    - positioned relative to its first positioned
 
-### | [🌟] [🌟] Useful Snippets |
+### [🌟] [🌟] Useful Snippets
 
 1. Centralising a box relative to another element
 
