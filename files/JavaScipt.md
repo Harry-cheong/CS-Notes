@@ -38,13 +38,13 @@
 9. Non-blocking event loop
    - an event loop takes long running tasks, executes them in one "background", and puts them back in the main thread once they are finished.
 
-## ▶▶▶▶▶▷▷▷▷▷ C01: Resources ◁◁◁◁◁◀◀◀◀◀
+## ▷▷▷▷▷ C01: Resources ◁◁◁◁◁
 
 1. [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
 ---
 
-## C02: IO
+## ▷▷▷▷▷ C02: IO ◁◁◁◁◁
 
 ### [🌟] Output
 
@@ -56,7 +56,7 @@
 
 ---
 
-## C03: Types
+## ▷▷▷▷▷ C03: Types ◁◁◁◁◁
 
 ### [🌟] Primitive Data Types
 
@@ -148,7 +148,7 @@ console.log("23" - "10" - 3);
 
 ---
 
-## C04: Variables
+## ▷▷▷▷▷ C04: Variables ◁◁◁◁◁
 
 ### [🌟] Defining Variables
 
@@ -209,7 +209,7 @@ console.log("23" - "10" - 3);
 
 ---
 
-## C05: Strings
+## ▷▷▷▷▷ C05: Strings ◁◁◁◁◁
 
 ### [🌟] Format
 
@@ -310,7 +310,7 @@ console.log("23" - "10" - 3);
   17. `.repeat(~count~)`
       - repeats the string count no. of times
 
-## C06: Numbers
+## ▷▷▷▷▷ C06: Numbers ◁◁◁◁◁
 
 - all numbers are stored as floating points
 
@@ -391,7 +391,7 @@ e.g. [using constructor]
 console.log(BigInt(2342813490));
 ```
 
-## C07: Math
+## ▷▷▷▷▷ C07: Math ◁◁◁◁◁
 
 ### [🌟] Properties ${07-properties}
 
@@ -436,7 +436,7 @@ console.log(BigInt(2342813490));
 5. `[*decimal*].toFixed(*noOfDecimalPlaces*)`
    - rounds to nearest noOfDecimalPlaces
 
-## C08: QoL
+## ▷▷▷▷▷ C08: QoL ◁◁◁◁◁
 
 ### [🌟] Commenting
 
@@ -452,7 +452,7 @@ console.log(BigInt(2342813490));
   e.g. instead of when score > guess and score < guess, use a single case score != guess ..
 - Creating functions
 
-## C09: Operators
+## ▷▷▷▷▷ C09: Operators ◁◁◁◁◁
 
 ### [🌟] Arithmetic Operators
 
@@ -740,7 +740,7 @@ console.log(guests); // returns 10
     3 - Assignment
 ```
 
-## C10: Logic Operations
+## ▷▷▷▷▷ C10: Logic Operations ◁◁◁◁◁
 
 ### [🌟] If-Else Statements
 
@@ -809,7 +809,7 @@ const me = "Jonas";
 console.log(`I'm ${2037 - 1991} years old ${me}`);
 ```
 
-## C11: Loops
+## ▷▷▷▷▷ C11: Loops ◁◁◁◁◁
 
 ### [🌟] For-Loop
 
@@ -874,7 +874,7 @@ while (i <= 10) {
 }
 ```
 
-## C12: Strict Mode
+## ▷▷▷▷▷ C12: Strict Mode ◁◁◁◁◁
 
 - Must be on the first line of the script
 - Write more secure code; avoid accidental bugs into the code
@@ -913,7 +913,7 @@ while (i <= 10) {
 
    - in this case, 'script.js:6 Uncaught ReferenceError: hasDriverLicense is not defined' in console
 
-## C13: Functions
+## ▷▷▷▷▷ C13: Functions ◁◁◁◁◁
 
 - reusable code blocks
 - dry (dun repeat urself) code
@@ -1204,7 +1204,7 @@ const booker = secureBooking();
 booker(); // How does this work? How does this access the passengerCount var? ...closures
 ```
 
-## C14: Arrays
+## ▷▷▷▷▷ C14: Arrays ◁◁◁◁◁
 
 - Hold info of diff types
 
@@ -1474,7 +1474,7 @@ console.log(users[0]?.name ?? 'User array empy');
 4. `.join(~separator~)`
     - creates and returns a new string by concatenating all of the elements in an array, with the separator between the elements
 
-## ▶▶▶▶▶▷▷▷▷▷ C15: Objects ◁◁◁◁◁◀◀◀◀◀
+## ▷▷▷▷▷ C15: Objects ◁◁◁◁◁
 
 - For key-value pair
 
@@ -1725,7 +1725,7 @@ console.log(harryFirstName, harryLastName, harryAge);
     const scoresMap = new Map(Object.entries(scores))
     ```
 
-## C16: Sets
+## ▷▷▷▷▷ C16: Sets ◁◁◁◁◁
 
 - only contains unique elements
 
@@ -1780,7 +1780,7 @@ console.log(harryFirstName, harryLastName, harryAge);
     - per iteration, it will pass `(value, _ : ~throwawayVar~ , array)` in that order as args
     - <> Array Methods [`.foreach` VS for-loop]
 
-## C17: Maps
+## ▷▷▷▷▷ C17: Maps ◁◁◁◁◁
 
 - the big difference betw objects and maps is that in maps, keys can be any type e.g. objects, array or other maps but in objects, keys must be strings
 - take note that for object keys to work, the key used to store and retrieve the value must have the same memory address
@@ -1827,7 +1827,7 @@ new Map([
     - per iteration, it will pass `(value, key, map)` in that order as args
     - <> Array Methods [`.foreach` VS for-loop]
 
-## C18: Date
+## ▷▷▷▷▷ C18: Date ◁◁◁◁◁
 
 - Initialization using date constructor
 
@@ -1983,7 +1983,7 @@ calcDaysPassed(new Date(2024, 11, 24), new Date(2024, 11, 28));
         console.log(new Intl.NumberFormat(navigator.language, options).format(num))
     ```
 
-## C19: Timers
+## ▷▷▷▷▷ C19: Timers ◁◁◁◁◁
 
 - used for asynchronous programming
 
@@ -2013,7 +2013,7 @@ calcDaysPassed(new Date(2024, 11, 24), new Date(2024, 11, 28));
 3. `setTimeout(~callbackFunction~, ~delay~)`
     - executes `~callbackFunction~` every `~delay~`
 
-## C20: DOM Manipulation
+## ▷▷▷▷▷ C20: DOM Manipulation ◁◁◁◁◁
 
 ### [🌟] What is the DOM?
 
@@ -2098,7 +2098,7 @@ calcDaysPassed(new Date(2024, 11, 24), new Date(2024, 11, 28));
         </h1>
     ```
 
-### [🌟] Event Types |
+### [🌟] Event Types
 
 1. `click`
     e.g. [Button]
@@ -2466,7 +2466,7 @@ observer.observe(~observedTarget~)
     <script defer src="script.js"></script>
     ```
 
-## C21: Object Oriented Programming
+## ▷▷▷▷▷ C21: Object Oriented Programming ◁◁◁◁◁
 
 - is a programming paradigm based on the concept of objects
 - objects may contain data and code. By using objects, we pack data and the corresponding behaviour into one block
@@ -2652,7 +2652,7 @@ Student.attendence() = function() {
 5. `.hasOwnProperty(~property~)`
     - checks whether the property belongs to the object (true) or inherited from prototype (false)
 
-## C22: How does JavaScript work?
+## ▷▷▷▷▷ C22: How does JavaScript work? ◁◁◁◁◁
 
 ### [🌟] About JavaScript Engine
 
@@ -2875,4 +2875,4 @@ Circumstances
 
 5. new, call, apply, bind
 
-## END
+## ▷▷▷▷▷ END ◁◁◁◁◁
