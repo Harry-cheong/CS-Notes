@@ -62,19 +62,19 @@
 
 - stored in the call stack, as part of an execution context
 
-  1. Number: All numbers, used for decimals and ints
-  2. String
-  3. Boolean: true/false (not in upper case)
+  1. `Number`: All numbers, used for decimals and ints
+  2. `String`
+  3. `Boolean`: true/false (not in upper case)
 
      / Falsy and Truthy Values
 
      - 5 Falsy Values; 0, '', undefined, null, Naming
      - All other objects are truthy values
 
-  4. Undefined: Value taken by a varable that is not yet defined('empty value')
-  5. Null: Also means 'empty value'
-  6. Symbol (ES2015): Value that is unique and cannot be changed
-  7. BigInt (ES2020): Large integers that the Number type cannot hold
+  4. `Undefined`: Value taken by a varable that is not yet defined('empty value')
+  5. `Null`: Also means 'empty value'
+  6. `Symbol` (ES2015): Value that is unique and cannot be changed
+  7. `BigInt` (ES2020): Large integers that the Number type cannot hold
 
   - JavaScript has dynamic typing: not need to manually define the data type of the value; automatic
     One variable can be changed from one type to another w.o. an error
