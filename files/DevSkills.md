@@ -48,7 +48,10 @@ e.g. [File > Preferrence > Configure User Snippets]
 ### Custom Colour Coding
 
 - settings.json
-e.g. [File > Preferrence > Settings > Click on the icon on the top right corner]
+
+e.g.
+
+[File > Preferrence > Settings > Click on the icon on the top right corner]
 
 ```json
 {
@@ -128,3 +131,11 @@ e.g. [File > Preferrence > Settings > Click on the icon on the top right corner]
 5. Create an empty file `.nojekyll` at the root of the project
 6. Generate with `npm run generate`
 7. Deploy with `npm run deploy`
+
+## ▷▷▷▷▷ Tech Stacks ◁◁◁◁◁
+
+1. Nuxt - FastAPI - MongoDB Stack
+    | Nuxtjs/Vuejs [Frontend] | | GitHub Actions [CI/CD] | | Flask/FastAPI [Backend] | | MongoDB [Database]| | Firebase/Google Cloud [Hosting] |
+
+2. MERN
+    | Reactjs [Frontend] | | Expressjs [Backend] | | Nodejs [Frontend/Backend] | | MongoDB [Database] |

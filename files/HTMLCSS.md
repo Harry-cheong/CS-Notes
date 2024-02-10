@@ -3,7 +3,7 @@
 - stands for Hyper Text Mark-up Language
 - ! + Tab automatically creates a html doc w basic config
 
-## Basic Structure
+## ▷▷▷▷▷ Basic Structure ◁◁◁◁◁
 
 ```html
 <!DOCTYPE html>
@@ -69,7 +69,7 @@
    - Specify file path
      `<img src="...">`
 
-## Classes and IDs
+## ▷▷▷▷▷ Classes and IDs ◁◁◁◁◁
 
 - Crucial for identifying elements & DOM Manipulation
 - IDs has to be unique while classes can be used over and over again
@@ -88,7 +88,7 @@ e.g. [*IDs*]
 <img id="course-image" src="..." /> />
 ```
 
-## Basic Features
+## ▷▷▷▷▷ Styling ◁◁◁◁◁
 
 1. Generic box
    `<div> </div>`
@@ -98,6 +98,12 @@ e.g. [*IDs*]
 
 3. Inputs
    `<input type="text" placeholder="Your name" />`
+
+4. Buttons
+   `<btn> Press Me! </btn>`
+
+5. Links
+   `<a href="https://google.com"></a>`
 
 ## Styling
 
@@ -135,7 +141,7 @@ e.g. [*IDs*]
 
 ### [🌟] [🌟] Background
 
-- Creates a box with a background
+- Text box with background
 
 [*Syntax*]
 
@@ -238,6 +244,16 @@ e.g. [*IDs*]
      left: 50%
      transform: translate(-50%, -50%);
    }
+   ```
+
+2. Image with link
+
+   [*syntax*]
+
+   ```html
+   <a href="https://google.com">
+      <img src="/pic.png" />
+   </a>  
    ```
 
 ## The CSS Box Model

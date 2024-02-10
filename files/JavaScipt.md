@@ -17,7 +17,7 @@
 
 4. Multi-paradigm
 
-   - An approach and mindset of structuring code, which will direct your coding sytle and technique
+   - An approach and mindset of structuring code, which will direct your coding style and technique
    - Paradigms consist of Procedural Programming, Object Oriented Programming and Functional Programming
 
 5. Protype-based object-Oriented
@@ -62,31 +62,31 @@
 
 - stored in the call stack, as part of an execution context
 
-  1. `Number`: All numbers, used for decimals and ints
-  2. `String`
-  3. `Boolean`: true/false (not in upper case)
+1. `Number`: All numbers, used for decimals and ints
+2. `String`
+3. `Boolean`: true/false (not in upper case)
 
-     / Falsy and Truthy Values
+    / Falsy and Truthy Values
 
-     - 5 Falsy Values; 0, '', undefined, null, Naming
-     - All other objects are truthy values
+    - 5 Falsy Values; 0, '', undefined, null, Naming
+    - All other objects are truthy values
 
-  4. `Undefined`: Value taken by a varable that is not yet defined('empty value')
-  5. `Null`: Also means 'empty value'
-  6. `Symbol` (ES2015): Value that is unique and cannot be changed
-  7. `BigInt` (ES2020): Large integers that the Number type cannot hold
+4. `Undefined`: Value taken by a varable that is not yet defined('empty value')
+5. `Null`: Also means 'empty value'
+6. `Symbol` (ES2015): Value that is unique and cannot be changed
+7. `BigInt` (ES2020): Large integers that the Number type cannot hold
 
-  - JavaScript has dynamic typing: not need to manually define the data type of the value; automatic
-    One variable can be changed from one type to another w.o. an error
+- JavaScript has dynamic typing: not need to manually define the data type of the value; automatic
+One variable can be changed from one type to another w.o. an error
 
 ### [🌟] Reference Types
 
 - stored in the heap
 
-  1. Object literal
-  2. Arrays
-  3. Functions
-  4. Many more...
+1. Object literal
+2. Arrays
+3. Functions
+4. Many more...
 
 ### [🌟] [🌟] Primitive vs Reference Types
 
@@ -241,74 +241,74 @@ console.log("23" - "10" - 3);
 
 - Calling a method on a string converts it to an object, and after it's done, it is converted back to a primitive type
 
-  e.g.
+e.g.
 
-  ```js
-  console.log(typeof new String('Jonas')) // returns Object`
+```js
+console.log(typeof new String('Jonas')) // returns Object`
 
-  console.log(typeof new String('Jonas).slice(0, 3)) // returns string
-  ```
+console.log(typeof new String('Jonas).slice(0, 3)) // returns string
+```
 
-  1. `.indexOf(~element~)`
+1. `.indexOf(~element~)`
 
-     - returns the index of specified element from the front
-     - case sensitive
+    - returns the index of specified element from the front
+    - case sensitive
 
-  2. `.lastIndexOf(~element~)`
+2. `.lastIndexOf(~element~)`
 
-     - finding and returning the index of specified element from the end
-     - case sensitive
+    - finding and returning the index of specified element from the end
+    - case sensitive
 
-  3. `.slice(~beginIndex~, ~endIndex~)` -> startIndex is incl, endIndex is excl
+3. `.slice(~beginIndex~, ~endIndex~)` -> startIndex is incl, endIndex is excl
 
-     - slices the string into a substring
-     - does not modify the og string
+    - slices the string into a substring
+    - does not modify the og string
 
-  4. `.toLowerCase()`
+4. `.toLowerCase()`
 
-     - lowercases all chars in the string
-     - does not modify the og string
+    - lowercases all chars in the string
+    - does not modify the og string
 
-  5. `.toUpperCase()`
+5. `.toUpperCase()`
 
-     - uppercases all chars in the string
-     - does not modify the og string
+    - uppercases all chars in the string
+    - does not modify the og string
 
-  6. `.trim()`
+6. `.trim()`
 
-     - removes whitespace from both ends of a string and returns a new string
-     - does not modify the og string
+    - removes whitespace from both ends of a string and returns a new string
+    - does not modify the og string
 
-  7. `.trimStart()`
+7. `.trimStart()`
 
-  8. `.trimEnd()`
+8. `.trimEnd()`
 
-  9. `.replace(~substring~, ~substring~)`
+9. `.replace(~substring~, ~substring~)`
 
-  10. `.replaceall(~substring~, ~substring~)`
+10. `.replaceall(~substring~, ~substring~)`
 
-      - finds and replaces all occurrences of a substring
+    - finds and replaces all occurrences of a substring
 
-  11. `.includes(~substring~)` // returns bool
+11. `.includes(~substring~)` // returns bool
 
-      - checks whether the string contains the substring
+    - checks whether the string contains the substring
 
-  12. `.startsWith(~substring~)` // returns bool
+12. `.startsWith(~substring~)` // returns bool
 
-      - checks whether the starts with the specified substring
+    - checks whether the starts with the specified substring
 
-  13. `.endsWith(~substring~)`
+13. `.endsWith(~substring~)`
 
-  14. `.split(~separator~)` // returns an array
+14. `.split(~separator~)` // returns an array
 
-  15. `.padStart(~desiredlen~, ~fillerchar~)`
+15. `.padStart(~desiredlen~, ~fillerchar~)`
 
-      - adds the fillerchar at the start of the string until the desired len is reached
+    - adds the fillerchar at the start of the string until the desired len is reached
 
-  16. `.padEnd(~desiredlen~, ~fillerchar~)`
+16. `.padEnd(~desiredlen~, ~fillerchar~)`
 
-  17. `.repeat(~count~)`
-      - repeats the string count no. of times
+17. `.repeat(~count~)`
+    - repeats the string count no. of times
 
 ## ▷▷▷▷▷ C06: Numbers ◁◁◁◁◁
 
@@ -596,31 +596,35 @@ console.log(BigInt(2342813490));
 1. `?` -> when condition is true
 2. `!` -> when condition is false
 
-e.g. [*Comparison with if..else*]
+e.g. [Comparison with if...else statement]
 
 ```js
-  const age = 23;
-  e.g. [w. statements]
-  age >= 18
-  ? console.log('I like to drink wine')
-  : console.log('I like to drink water');
+// with ternary operator
+const age = 23;
 
-  e.g. [w. expressions]
-  const drink = age >= 18 ? 'wine' : 'water';
-  console.log(drink);
+age >= 18
+? console.log('I like to drink wine')
+: console.log('I like to drink water');
 
-  console.log(`I like to drink ${age >= 18 ? 'wine': 'water'}`)
+// OR
+const drink = age >= 18 ? 'wine' : 'water';
+console.log(drink);
+
+// OR
+console.log(`I like to drink ${age >= 18 ? 'wine': 'water'}`)
 ```
 
 ```js
-    e.g.
-    let drinkk:
-    if (age>=18) {
-    drink2 = 'wine';
-    } else {
-    drink2 = 'water';
-    }
-    console.log(drink2)
+// with if...else statement
+let drink2;
+
+if (age >= 18) {
+drink2 = 'wine';
+} else {
+drink2 = 'water';
+}
+
+console.log(drink2)
 ```
 
 - In conclusion, the use of the conditional operator makes code shorter and cleaner
