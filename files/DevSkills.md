@@ -135,7 +135,18 @@ e.g.
 ## ▷▷▷▷▷ Tech Stacks ◁◁◁◁◁
 
 1. Nuxt - FastAPI - MongoDB Stack
-    | Nuxtjs/Vuejs [Frontend] | | GitHub Actions [CI/CD] | | Flask/FastAPI [Backend] | | MongoDB [Database]| | Firebase/Google Cloud [Hosting] |
+    | Usage | Technology |
+    | ----------- | ----------- |
+    | Frontend | Nuxtjs/Vuejs |
+    | CI/CD | GitHub Actions |
+    | Backend | Flask/FastAPI |
+    | Database | MongoDB |
+    | Hosting/Cloud | Firebase/Google Cloud |
 
 2. MERN
-    | Reactjs [Frontend] | | Expressjs [Backend] | | Nodejs [Frontend/Backend] | | MongoDB [Database] |
+    | Usage | | Technology |
+    | ----------- | ----------- |
+    | Frontend | Reactjs |
+    | Backend | Expressjs |
+    | Frontend/Backend | Nodejs |
+    | Database | MongoDB |
