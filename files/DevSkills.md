@@ -144,7 +144,7 @@ e.g.
     | Hosting/Cloud | Firebase/Google Cloud |
 
 2. MERN
-    | Usage | | Technology |
+    | Usage | Technology |
     | ----------- | ----------- |
     | Frontend | Reactjs |
     | Backend | Expressjs |
