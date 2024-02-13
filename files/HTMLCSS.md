@@ -1,7 +1,26 @@
-# HTML
+# HTML & CSS
+
+## ▷▷▷▷▷ HTML ◁◁◁◁◁
 
 - stands for Hyper Text Mark-up Language
 - ! + Tab automatically creates a html doc w basic config
+
+### [🌟] HTML Tags
+
+1. Generic box
+   `<div> </div>`
+
+2. Form box
+   `<form> </form>`
+
+3. Inputs
+   `<input type="text" placeholder="Your name" />`
+
+4. Buttons
+   `<btn> Press Me! </btn>`
+
+5. Links
+   `<a href="https://google.com"></a>`
 
 ## ▷▷▷▷▷ Basic Structure ◁◁◁◁◁
 
@@ -89,23 +108,6 @@ e.g. [*IDs*]
 ```
 
 ## ▷▷▷▷▷ Styling ◁◁◁◁◁
-
-1. Generic box
-   `<div> </div>`
-
-2. Form box
-   `<form> </form>`
-
-3. Inputs
-   `<input type="text" placeholder="Your name" />`
-
-4. Buttons
-   `<btn> Press Me! </btn>`
-
-5. Links
-   `<a href="https://google.com"></a>`
-
-## Styling
 
 - To link html to css : `<link href = "style.css" rel="stylesheet" >`
 
@@ -256,7 +258,7 @@ e.g. [*IDs*]
    </a>  
    ```
 
-## The CSS Box Model
+## ▷▷▷▷▷ The CSS Box Model ◁◁◁◁◁
 
 - Any webpage can be broken down into boxes
 - Each box has 5 properties: content, padding, border, margin and fill area
