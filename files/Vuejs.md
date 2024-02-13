@@ -2,7 +2,7 @@
 
 - uses declarative approach
 
-## DOM Interaction
+## ▷▷▷▷▷ C01: DOM Interaction ◁◁◁◁◁
 
 ### [🌟] Creating a Vue application
 
@@ -372,12 +372,12 @@ e.g. [V-binding class, Adding CSS style dynamically]
     <div :class = "['demo', {active: this.boxASelected}]"></div>
     ```
 
-### Rendering Conditional Content
+### [🌟] Rendering Conditional Content
 
 - rendering features only if some condition is met
 - use cases : showing a loading spinner before the data arrives
 
-| [🌟] [🌟] Directives |
+### [🌟] [🌟] Generic Directives
 
 1. `v-if = "~condition~"`
     - attaches and detaches elements from DOM based on whether the condition is fulfilled
@@ -422,7 +422,7 @@ e.g. [V-binding class, Adding CSS style dynamically]
     - vue always re-uses DOM elements to optimize performance -> this can lead to bugs if elements contain state
     - allows vue to distinguish between different elements created by `v-for`, retaining any information attached to it instead of transferring it to another
 
-## Behind the scene
+## ▷▷▷▷▷ C02: Behind the scene ◁◁◁◁◁
 
 ### [🌟] Vue's Reactivity
 
@@ -457,13 +457,13 @@ proxy.message = 'Hello!!!'
 console.log(proxy.longMessage); // outputs "Hello!!!World!"
 ```
 
-## [🌟] [🌟] One App VS Multiple App
+### [🌟] [🌟] One App VS Multiple App
 
 - apps do not have connection to each other; data in one cannot be accessed by the other
 - when to use one app: for website requiring synergy among different components
 - when to use multiple app: for website requiring different independent parts controlled by vue
 
-## [🌟] Vue Templates
+### [🌟] Vue Templates
 
 - vue templates are syntactically valid HTML that can be parsed by browsers and HTML parsers
 
@@ -481,7 +481,7 @@ console.log(proxy.longMessage); // outputs "Hello!!!World!"
     })
     ```
 
-## [🌟] Refs
+### [🌟] Refs
 
 - allows a direct reference to a specific DOM element or child component instance after it's mounted to be obtained
 
@@ -546,7 +546,7 @@ Sequentially...
 
 [🪝] #2: `unmounted()`
 
-## Development Setup & Workflow
+## ▷▷▷▷▷ C03: Development Setup & Workflow ◁◁◁◁◁
 
 ### [🌟] Why Development Server?
 
@@ -678,7 +678,7 @@ e.g.
 
 [⚙️] Stage #3: Hosting on a development or real server
 
-## Components
+## ▷▷▷▷▷ C04: Components ◁◁◁◁◁
 
 - allows for easy replication and encapsulation of HTML code, with attached data and logic
 - splitting a big application into multiple smaller chunks
@@ -712,7 +712,7 @@ app.mount("#app")
     - used in SPAs or Single Page Applications where instead a user interace is built up with multiple components
     - [Why?] Vue apps are independent from each other - they can't really communicate, while components do offer communication mechnanisms that allow exchange of data between them
 
-## Component Communication
+## ▷▷▷▷▷ C05: Component Communication ◁◁◁◁◁
 
 - Components are used to build UIs by combining them
 - Components build "parent-child" relations and use "unidirectional data flows" for communication
@@ -862,7 +862,7 @@ inject : [~key~, ...]
     2. Functions/Methods
         - providing function in the parent for the child to execute it
 
-## Component Deep Dive
+## ▷▷▷▷▷ C06: Component Deep Dive ◁◁◁◁◁
 
 ### [🌟] QoL
 
@@ -948,7 +948,7 @@ e.g.
 </template>
 ```
 
-## [🌟] Named Slots
+### [🌟] Named Slots
 
 - A `<slot>` outlet without `name` implicityly has the name "default"
 - to pass multiple slot content fragments, we need named slots
@@ -1347,7 +1347,7 @@ e.g.
 
 [Priority C: Recommended] EXISTS
 
-## Forms
+## ▷▷▷▷▷ C07: Forms ◁◁◁◁◁
 
 ### [🌟] v-model
 
@@ -1467,7 +1467,7 @@ e.g.
 </template>
 ```
 
-## HTTP requests
+## ▷▷▷▷▷ C08: HTTP requests ◁◁◁◁◁
 
 - allows the vue app to connect to a backend
 - can be done more conveniently with third-party libraries like Axios
@@ -1608,7 +1608,7 @@ export default {
     })
     ```
 
-## Routing
+## ▷▷▷▷▷ C09: Routing ◁◁◁◁◁
 
 - allows us to build Single Page Applications (SPA) which are JavaScript driven client side web applications, entirely controlled by JS running in the browser
 - has the same URl wherever you are on the applications
@@ -1993,7 +1993,7 @@ route : [
 ]
 ```
 
-## Composition API
+## ▷▷▷▷▷ C10: Composition API ◁◁◁◁◁
 
 ### [🌟] Why?
 
@@ -2384,7 +2384,7 @@ export default {
         
     ```
 
-## Reusing Code
+## ▷▷▷▷▷ C11: Reusing Code ◁◁◁◁◁
 
 - Mixins (Options API)
 - Custom Composition Functions (Composition API)
