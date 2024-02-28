@@ -66,10 +66,10 @@
 2. `String`
 3. `Boolean`: true/false (not in upper case)
 
-    / Falsy and Truthy Values
+   / Falsy and Truthy Values
 
-    - 5 Falsy Values; 0, '', undefined, null, Naming
-    - All other objects are truthy values
+   - 5 Falsy Values; 0, '', undefined, null, Naming
+   - All other objects are truthy values
 
 4. `Undefined`: Value taken by a varable that is not yet defined('empty value')
 5. `Null`: Also means 'empty value'
@@ -77,7 +77,7 @@
 7. `BigInt` (ES2020): Large integers that the Number type cannot hold
 
 - JavaScript has dynamic typing: not need to manually define the data type of the value; automatic
-One variable can be changed from one type to another w.o. an error
+  One variable can be changed from one type to another w.o. an error
 
 ### [🌟] Reference Types
 
@@ -251,33 +251,33 @@ console.log(typeof new String('Jonas).slice(0, 3)) // returns string
 
 1. `.indexOf(~element~)`
 
-    - returns the index of specified element from the front
-    - case sensitive
+   - returns the index of specified element from the front
+   - case sensitive
 
 2. `.lastIndexOf(~element~)`
 
-    - finding and returning the index of specified element from the end
-    - case sensitive
+   - finding and returning the index of specified element from the end
+   - case sensitive
 
 3. `.slice(~beginIndex~, ~endIndex~)` -> startIndex is incl, endIndex is excl
 
-    - slices the string into a substring
-    - does not modify the og string
+   - slices the string into a substring
+   - does not modify the og string
 
 4. `.toLowerCase()`
 
-    - lowercases all chars in the string
-    - does not modify the og string
+   - lowercases all chars in the string
+   - does not modify the og string
 
 5. `.toUpperCase()`
 
-    - uppercases all chars in the string
-    - does not modify the og string
+   - uppercases all chars in the string
+   - does not modify the og string
 
 6. `.trim()`
 
-    - removes whitespace from both ends of a string and returns a new string
-    - does not modify the og string
+   - removes whitespace from both ends of a string and returns a new string
+   - does not modify the og string
 
 7. `.trimStart()`
 
@@ -603,15 +603,15 @@ e.g. [Comparison with if...else statement]
 const age = 23;
 
 age >= 18
-? console.log('I like to drink wine')
-: console.log('I like to drink water');
+  ? console.log("I like to drink wine")
+  : console.log("I like to drink water");
 
 // OR
-const drink = age >= 18 ? 'wine' : 'water';
+const drink = age >= 18 ? "wine" : "water";
 console.log(drink);
 
 // OR
-console.log(`I like to drink ${age >= 18 ? 'wine': 'water'}`)
+console.log(`I like to drink ${age >= 18 ? "wine" : "water"}`);
 ```
 
 ```js
@@ -619,12 +619,12 @@ console.log(`I like to drink ${age >= 18 ? 'wine': 'water'}`)
 let drink2;
 
 if (age >= 18) {
-drink2 = 'wine';
+  drink2 = "wine";
 } else {
-drink2 = 'water';
+  drink2 = "water";
 }
 
-console.log(drink2)
+console.log(drink2);
 ```
 
 - In conclusion, the use of the conditional operator makes code shorter and cleaner
@@ -1111,56 +1111,61 @@ const greet = (greetings) => (name) => {
 
 1. `.call(~this~, ...args)`
 
-    - specifies what 'this' refers to in the function
-    - ...args are simply the args the function normally receives
-    - calls the fn
+   - specifies what 'this' refers to in the function
+   - ...args are simply the args the function normally receives
+   - calls the fn
 
 2. `.apply(~this~, [...args])`
 
-    - works the same way as .call except it takes an array of args
-    - calls the fn
+   - works the same way as .call except it takes an array of args
+   - calls the fn
 
 3. [❗] `.bind(~this~, ..otherFixedArgs)`
 
-    - it does not immediately call the function, instead it returns a new function where the 'this' keyword is bound to the one specified
-    - ...otherFixedArgs are args that are fixed for any call of the binded function down the road
-    - use `null` to skip the first perimeter
+   - it does not immediately call the function, instead it returns a new function where the 'this' keyword is bound to the one specified
+   - ...otherFixedArgs are args that are fixed for any call of the binded function down the road
+   - use `null` to skip the first perimeter
 
-    e.g.
+   e.g.
 
-    ```js
+   ```js
 
-    const shinkansen = {
-        country: JPN,
-        speed: 800,
-        rating: 5,
-        reviews: [],
-        addReview(user, text, time) {
-            this.reviews.push(`At ${time}, ${user} posted ${text}`)
-        }
-    }
+   const shinkansen = {
+       country: JPN,
+       speed: 800,
+       rating: 5,
+       reviews: [],
+       addReview(user, text, time) {
+           this.reviews.push(`At ${time}, ${user} posted ${text}`)
+       }
+   }
 
-    const HSR = {
-        country: PRC
-        speed: 500,
-        rating: 3,
-        reviews: [],
-    }
+   const HSR = {
+       country: PRC
+       speed: 500,
+       rating: 3,
+       reviews: [],
+   }
 
-    const revShinkansen = addReview.bind(shinkansen, 'Harry');
-    revShinkansen('It was a pleasant ride', 0900); // the object shinkansen is updated
-    ```
+   const revShinkansen = addReview.bind(shinkansen, 'Harry');
+   revShinkansen('It was a pleasant ride', 0900); // the object shinkansen is updated
+   ```
 
-    e.g. [addEventListener] // Always used here cos .bind does not call the fn
+   e.g. [addEventListener] // Always used here cos .bind does not call the fn
 
-    ```js
-    HSR.addRating = function(i, reviews) {
-        this.rating += i;
-    };
+   ```js
+   HSR.addRating = function (i, reviews) {
+     this.rating += i;
+   };
 
-    const onButtonFn = HSR.addRating.bind(HSR, 1)
-    document.querySelector('.button').addEventListener('click', HSR.addRating.bind(document.querySelector('.textarea').value))
-    ```
+   const onButtonFn = HSR.addRating.bind(HSR, 1);
+   document
+     .querySelector(".button")
+     .addEventListener(
+       "click",
+       HSR.addRating.bind(document.querySelector(".textarea").value)
+     );
+   ```
 
 ### [🌟] [🌟] [🌟] Immediately Invoked Function Expression (IIFE)
 
@@ -1172,15 +1177,15 @@ const greet = (greetings) => (name) => {
 e.g. [Default function]
 
 ```js
-(function() {
-console.log('This will never run again');
+(function () {
+  console.log("This will never run again");
 })();
 ```
 
 e.g. [Arrow function]
 
 ```js
-(() => console.log('This will ALSO never run again'))();
+(() => console.log("This will ALSO never run again"))();
 ```
 
 ### [🌟] Closures
@@ -1195,12 +1200,12 @@ e.g.
 
 ```js
 const secureBooking = function () {
-    let passengerCount = 0;
+  let passengerCount = 0;
 
-    return function () {
-        passengerCount++;
-        console.log(`${passengerCount} passengers`);
-    };
+  return function () {
+    passengerCount++;
+    console.log(`${passengerCount} passengers`);
+  };
 };
 
 const booker = secureBooking();
@@ -1222,32 +1227,32 @@ booker(); // How does this work? How does this access the passengerCount var? ..
 
 1. Defining arrays
 
-    e.g.
+   e.g.
 
-    ```js
-    const friends = ['Michael', 'Steven', 'Peter']
+   ```js
+   const friends = ["Michael", "Steven", "Peter"];
 
-    // OR 
-    
-    const years = new Arry(1991, 1984, 2008, 2020)
-    ```
+   // OR
 
-    - use of const in this case means that the array cannot be overwritten by another array
+   const years = new Arry(1991, 1984, 2008, 2020);
+   ```
 
-    Take note:
+   - use of const in this case means that the array cannot be overwritten by another array
 
-    ```js
-        const years = [1, 2, 3]
-        years = [1, 2] -> 'Uncaught TypeError: Assignment to constant variable.'
-        // the memory address of the array is stored in a constant variable
-    ```
+   Take note:
+
+   ```js
+       const years = [1, 2, 3]
+       years = [1, 2] -> 'Uncaught TypeError: Assignment to constant variable.'
+       // the memory address of the array is stored in a constant variable
+   ```
 
 2. Indexing
-    e.g.
+   e.g.
 
-    ```js
-        console.log(friends[0]);
-    ```
+   ```js
+   console.log(friends[0]);
+   ```
 
 ### [🌟] Array Destructuring
 
@@ -1268,121 +1273,137 @@ booker(); // How does this work? How does this access the passengerCount var? ..
 e.g.
 
 ```js
-const users = [{ name: 'harry', email: 'harry@javascript.io' }];
-console.log(users[0]?.name ?? 'User array empy');
+const users = [{ name: "harry", email: "harry@javascript.io" }];
+console.log(users[0]?.name ?? "User array empy");
 ```
 
 ### [🌟] Attributes
 
 1. length
 
-    e.g.
+   e.g.
 
-    ```js
-    console.log(friends.length);
-    ```
+   ```js
+   console.log(friends.length);
+   ```
 
 | [🌟] Array Mutation Methods |
 
 1. `.push(...)`
-    - adds element to the end of array
+
+   - adds element to the end of array
 
 2. `.unshift(...)`
-    - adds element to start of array
+
+   - adds element to start of array
 
 3. `.pop()`
-    - removes and return the last element
+
+   - removes and return the last element
 
 4. `.shift()`
-    - remove first and return first element
+
+   - remove first and return first element
 
 5. `.splice(~begin~, ~count~)`
-    - `count` : the no. of elements to delete
-    - mutate the original array
+
+   - `count` : the no. of elements to delete
+   - mutate the original array
 
 6. `.reverse()`
-    - reverses the order of the elements in the array
+
+   - reverses the order of the elements in the array
 
 7. `.sort()`
-    - converts all elements to strings before sorting them
+
+   - converts all elements to strings before sorting them
 
 8. `.sort([callbackFunction])`
-    - per iteration, it will pass (a, b) as args
-    - `callbackFunction` returning - or + value based on how the sequence of the 2 elements are to be changed
-    - Rule:
-        return < 0; keep order // Resultant: A, B
-        return > 0; switch order // Resultant: B, A
 
-    e.g. [Arranging integers]
+   - per iteration, it will pass (a, b) as args
+   - `callbackFunction` returning - or + value based on how the sequence of the 2 elements are to be changed
+   - Rule:
+     return < 0; keep order // Resultant: A, B
+     return > 0; switch order // Resultant: B, A
 
-    ```js
-    movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+   e.g. [Arranging integers]
 
-    // In ascending order
-    movements.sort((a, b) => a - b);
+   ```js
+   movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
-    // In descending order
-    movements.sort((a, b) => b - a);
-    ```
+   // In ascending order
+   movements.sort((a, b) => a - b);
+
+   // In descending order
+   movements.sort((a, b) => b - a);
+   ```
 
 9. `.fill(~element~,~begin~, ~end~)`
-    - creates `element` and fills them in between `begin` an `end`
+   - creates `element` and fills them in between `begin` an `end`
 
 ### [🌟] Array Searching Methods
 
 1. `.indexOf(~element~)`
-    - returns the index of specified element from the front
-    - can only find an element from the array
-    - case sensitive
+
+   - returns the index of specified element from the front
+   - can only find an element from the array
+   - case sensitive
 
 2. `.includes()`
-    - returns true/false whether element is in list
+
+   - returns true/false whether element is in list
 
 3. `.find(~callbackFunction~)`
-    - `callbackFunction` returns bool value
-    - returns the first element in the array that fulfills the condition
+
+   - `callbackFunction` returns bool value
+   - returns the first element in the array that fulfills the condition
 
 4. `.at(~i~)` // returns the element at i
-    - useful as array[-1] is undefined
+
+   - useful as array[-1] is undefined
 
 5. `.findIndex(~callbackFunction~)`
-    - `callbackFunction` returns bool value
-    - allows for more complex search operations as compared to .indexOf
-    e.g.
-        const index = accounts.findIndex(
-            acc => acc.username === currentAccount.username // allows for comparing of object properties
-        );
+
+   - `callbackFunction` returns bool value
+   - allows for more complex search operations as compared to .indexOf
+     e.g.
+     const index = accounts.findIndex(
+     acc => acc.username === currentAccount.username // allows for comparing of object properties
+     );
 
 6. `.some(~callbackFunction~)`
-    - `callbackFunction` returns bool value
-    - returns bool based on whether there is any value in the array that fulfills the condition in the function
+
+   - `callbackFunction` returns bool value
+   - returns bool based on whether there is any value in the array that fulfills the condition in the function
 
 7. `.every(~callbackFunction~)`
-    - The provided callbackFn function is called once for each element in an array, until the callbackFn returns a falsy value. If such an element is found, every() immediately returns false and stops iterating through the array. Otherwise, if callbackFn returns a truthy value for all elements, every() returns true.
 
-    e.g. [Checking for all matches]
+   - The provided callbackFn function is called once for each element in an array, until the callbackFn returns a falsy value. If such an element is found, every() immediately returns false and stops iterating through the array. Otherwise, if callbackFn returns a truthy value for all elements, every() returns true.
 
-    ```js
-    const num = [1, 3, 10, 20, 30]
+   e.g. [Checking for all matches]
 
-    num.every((element) => element < 15) // Expected Output: false
-    ```
+   ```js
+   const num = [1, 3, 10, 20, 30];
+
+   num.every((element) => element < 15); // Expected Output: false
+   ```
 
 ### [🌟] [🌟] Array Generation
 
 1. `Array.from(~iterableObject~, ~callbackFunction~)`
-    - per iteration, it will pass (element, i) as args
-    - `callbackFunction` returns a value for the element at pos i, similar to the function used in .map
 
-    e.g. [Generating an array of 1-7]
+   - per iteration, it will pass (element, i) as args
+   - `callbackFunction` returns a value for the element at pos i, similar to the function used in .map
 
-    ```js
-    const natureNo = Array.from({length : 7}, (_, i) => i + 1);
-    console.log(natureNo);
-    ```
+   e.g. [Generating an array of 1-7]
+
+   ```js
+   const natureNo = Array.from({ length: 7 }, (_, i) => i + 1);
+   console.log(natureNo);
+   ```
 
 2. `new Array(~count~) + .fill(~element~,~begin~, ~end~)`
-    - `new Array(~count~)` : creates a array of length `count` with empty values
+   - `new Array(~count~)` : creates a array of length `count` with empty values
 
 ### [🌟] [🌟] New Array Creation Methods
 
@@ -1391,92 +1412,95 @@ console.log(users[0]?.name ?? 'User array empy');
 
 1. `.map(~callbackFunction~)`
 
-    - per element, it will pass `(element, i, array)` into the `callbackFunction`
-    - maps the value returned per execution to a new array
+   - per element, it will pass `(element, i, array)` into the `callbackFunction`
+   - maps the value returned per execution to a new array
 
 2. `.filter(~callbackFunction~)`
 
-    - `callbackFunction` returns bool value
-    - per iteration, it will pass `(element, i, array)` into the `callbackFunction`
-    - returns a new array containing the array elements that passed a specified test condition
+   - `callbackFunction` returns bool value
+   - per iteration, it will pass `(element, i, array)` into the `callbackFunction`
+   - returns a new array containing the array elements that passed a specified test condition
 
-    e.g.
+   e.g.
 
-    ```js
-    movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+   ```js
+   movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
-    const deposits = movements.filter((mov) => {
-        return mov > 0;
-    })
+   const deposits = movements.filter((mov) => {
+     return mov > 0;
+   });
 
-    console.log(deposits); // returns [200, 450, 3000, 70, 1300]
-    ```
+   console.log(deposits); // returns [200, 450, 3000, 70, 1300]
+   ```
 
 3. `~array1~.concat(~array2~)` // returns a new array made up of the 2 arrays
 
 4. `.slice(~begin~, ~end~)` // returns a new array
 
-    - begin is inclusive, end is exclusive
-    - does not mutate the original array
+   - begin is inclusive, end is exclusive
+   - does not mutate the original array
 
 5. `.flat(~depth~)`
 
-    - returns a new array with elements extracted from nested arrays
+   - returns a new array with elements extracted from nested arrays
 
-    e.g.
+   e.g.
 
-    ```js
-    const arrDeep = [[1, 2], [[3, 4], 5], [6, 7], 8];
-    console.log(arrDeep.flat[2]) // returns [1, 2, 3, 4, 5, 6, 7, 8]
-    ```
+   ```js
+   const arrDeep = [[1, 2], [[3, 4], 5], [6, 7], 8];
+   console.log(arrDeep.flat[2]); // returns [1, 2, 3, 4, 5, 6, 7, 8]
+   ```
 
 6. .flatMap(~callbackFunction~)
 
-    - works the same way as`.map(~callbackFunction~)` with `.flat()`
-    - take note that `.flatMap` only `.flat(1)`
+   - works the same way as`.map(~callbackFunction~)` with `.flat()`
+   - take note that `.flatMap` only `.flat(1)`
 
 ### [🌟] [🌟] Other Methods
 
 1. `.reduce(~callbackFunction~, ~initialValueOfAccumulator~)` // returns the reduced to value
-    - per iteration, it will pass `(accumulator, current, i, array)` into the `callbackFunction`
-    - boils all array elements down to one single value e.g. adding all elements together
 
-    e.g. [Finding sum]
+   - per iteration, it will pass `(accumulator, current, i, array)` into the `callbackFunction`
+   - boils all array elements down to one single value e.g. adding all elements together
 
-    ```js
-    movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+   e.g. [Finding sum]
 
-    const balance = movements.reduce((acc, cur) => {
-        acc + curr
-    }, 0)
-    ```
+   ```js
+   movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
-    e.g. [Finding Max]
+   const balance = movements.reduce((acc, cur) => {
+     acc + curr;
+   }, 0);
+   ```
 
-    ```js
-    const max = movements.reduce((acc, cur) => {
-        return acc = cur > acc ? cur : acc;
-    })
-    ```
+   e.g. [Finding Max]
+
+   ```js
+   const max = movements.reduce((acc, cur) => {
+     return (acc = cur > acc ? cur : acc);
+   });
+   ```
 
 2. `.entries()`
-    - returns an array iterator object with key/value pairs
 
-    e.g.
+   - returns an array iterator object with key/value pairs
 
-    ```js
-    const fruits = ['Banana', 'Orange', 'Apple', 'Mango'];
-    for (fruit of fruits.entries()) {
-        console.log(fruit) // returns [1, 'Banana']...
-    }
-    ```
+   e.g.
+
+   ```js
+   const fruits = ["Banana", "Orange", "Apple", "Mango"];
+   for (fruit of fruits.entries()) {
+     console.log(fruit); // returns [1, 'Banana']...
+   }
+   ```
 
 3. `.foreach(~callbackFunction~)`
-    - per iteration, it will pass `(element, i, array)` in that order as args
-    - [❗] [`.foreach` VS for-loop] :  it is not possible to break out of a .foreach loop; continue & break statements do not work
+
+   - per iteration, it will pass `(element, i, array)` in that order as args
+   - [❗] [`.foreach` VS for-loop] : it is not possible to break out of a .foreach loop; continue & break statements do not work
 
 4. `.join(~separator~)`
-    - creates and returns a new string by concatenating all of the elements in an array, with the separator between the elements
+   - creates and returns a new string by concatenating all of the elements in an array, with the separator between the elements
 
 ## ▷▷▷▷▷ C15: Objects ◁◁◁◁◁
 
@@ -1496,53 +1520,54 @@ console.log(users[0]?.name ?? 'User array empy');
 
 1. Creating objects w. `{}`
 
-    e.g.
+   e.g.
 
-    ```js
-    const harry = {
-        firstName : 'Harry',
-        lastName : 'Cheong',
-        age: 2037 - 1991,
-        job: 'teacher',
-        friends: ['Michael', 'Peter', 'Steven']
-    }
-    // the object harry has 5 properties
-    ```
+   ```js
+   const harry = {
+     firstName: "Harry",
+     lastName: "Cheong",
+     age: 2037 - 1991,
+     job: "teacher",
+     friends: ["Michael", "Peter", "Steven"],
+   };
+   // the object harry has 5 properties
+   ```
 
 2. Retrieving properties
 
-    - `.` & brackets are operators to retrieve properties
+   - `.` & brackets are operators to retrieve properties
 
-    e.g. [using . notation]
+   e.g. [using . notation]
 
-    ```js
-    console.log(harry.lastName)
-    ```
+   ```js
+   console.log(harry.lastName);
+   ```
 
-    e.g. [using brackets]
-    - allows operation to be performed within []
+   e.g. [using brackets]
 
-    e.g.
+   - allows operation to be performed within []
 
-    ```js
-    const nameKey = 'Name';
-    console.log(harry['first' + namekey])
-    console.log(harry['last' + nameKey])
-    ```
+   e.g.
+
+   ```js
+   const nameKey = "Name";
+   console.log(harry["first" + namekey]);
+   console.log(harry["last" + nameKey]);
+   ```
 
 3. Adding properties
 
-    e.g. [using `.`]
+   e.g. [using `.`]
 
-    ```js
-    harry.location = 'Singapore'
-    ```
+   ```js
+   harry.location = "Singapore";
+   ```
 
-    e.g. [using brackets]
+   e.g. [using brackets]
 
-    ```js
-    harry['twitter'] = '@harry'
-    ```
+   ```js
+   harry["twitter"] = "@harry";
+   ```
 
 ### [🌟] Object Destructuring
 
@@ -1555,52 +1580,51 @@ const { firstName, lastName, age } = harry;
 console.log(firstName, lastName, age);
 
 const {
-    firstName : harryFirstName,
-    lastName : harryLastName,
-    age : harryAge,
+  firstName: harryFirstName,
+  lastName: harryLastName,
+  age: harryAge,
 } = harry;
 console.log(harryFirstName, harryLastName, harryAge);
 ```
 
 1. Setting defaults
-    - Useful especially when the data returned is not certain
-    - Used in apis for eg
 
-    e.g.
+   - Useful especially when the data returned is not certain
+   - Used in apis for eg
 
-    ```js
-    const {firstName : harryFirstName,
-            favFood : harryFavFood = []
-            } = harry;
-    console.log(favFood) // returns []
-    ```
+   e.g.
+
+   ```js
+   const { firstName: harryFirstName, favFood: harryFavFood = [] } = harry;
+   console.log(favFood); // returns []
+   ```
 
 2. Mutating Variables
 
-    e.g.
+   e.g.
 
-    ```js
-    let a = 111;
-    let b = 999;
-    const obj = {a : 23, b: 7, c: 14};
-    ({a, b} = obj); // line is wrapped in parenthesis as line with "=" operator cannot start with curly brackets
-    console.log(a, b);
-    ```
+   ```js
+   let a = 111;
+   let b = 999;
+   const obj = { a: 23, b: 7, c: 14 };
+   ({ a, b } = obj); // line is wrapped in parenthesis as line with "=" operator cannot start with curly brackets
+   console.log(a, b);
+   ```
 
 3. Destructuring with functions
 
-    e.g.
+   e.g.
 
-    ```js
-    orderDelivery: function({starterIndex, mainIndex, time, address}) {
-        ...
-    }
-    orderDelivery({
-        time: "22:30",
-        address: "23 East Coast Road",
-        ...
-    })
-    ```
+   ```js
+   orderDelivery: function({starterIndex, mainIndex, time, address}) {
+       ...
+   }
+   orderDelivery({
+       time: "22:30",
+       address: "23 East Coast Road",
+       ...
+   })
+   ```
 
 ### [🌟] [🌟] Enhanced Object Literals (ES6)
 
@@ -1608,72 +1632,71 @@ console.log(harryFirstName, harryLastName, harryAge);
 
 1. Defining methods
 
-    - Implicit function type
+   - Implicit function type
 
-    e.g.
+   e.g.
 
-    ```js
-    const restaurant = {
-        // ...
-        order() { 
-        // is the same as order = function() {...}
-        }
-    }
-    ```
+   ```js
+   const restaurant = {
+     // ...
+     order() {
+       // is the same as order = function() {...}
+     },
+   };
+   ```
 
 2. Nested objects in objects
 
-    e.g.
+   e.g.
 
-    ```js
-    const openingHours = {
-    // ...
-    }
+   ```js
+   const openingHours = {
+     // ...
+   };
 
-    const restaurant = {
-    // ...
-    openingHours, // instead of openingHours = openingHours
-    }
-    ```
+   const restaurant = {
+     // ...
+     openingHours, // instead of openingHours = openingHours
+   };
+   ```
 
 3. Compute property names
 
-  e.g. [Defining object properties]
+e.g. [Defining object properties]
 
-  ```js
-  const openingHours = {
-    Today : 133,
-    `Day ${Today + 1}` : "0800 : 1800",
-  }
-  ```
+```js
+const openingHours = {
+  Today : 133,
+  `Day ${Today + 1}` : "0800 : 1800",
+}
+```
 
 ### [🌟] Optional Chaining `?.`
 
 1. Checking whether a property exists
 
-    e.g.
+   e.g.
 
-    ```js
-
-    restaurant = {
-        openingHours: {
-            thu : {
-                open: 0,
-                close: 18,
-            }
-        }  
-     }
-    console.log(restaurant.openingHours?.mon) // returns undefined
-    console.log(restaurant.openingHours.mon) // throws AttributeNotFound error
-    ```
+   ```js
+   restaurant = {
+     openingHours: {
+       thu: {
+         open: 0,
+         close: 18,
+       },
+     },
+   };
+   console.log(restaurant.openingHours?.mon); // returns undefined
+   console.log(restaurant.openingHours.mon); // throws AttributeNotFound error
+   ```
 
 2. Checking whether a method exists
 
-    e.g.
+   e.g.
 
-    ```js
-    console.log(restaurant.order?.(0,1)); // returns undefined
-    ```
+   ```js
+   console.log(restaurant.order?.(0, 1)); // returns undefined
+   ```
 
 ### [🌟] Object Methods
 
@@ -1681,53 +1704,55 @@ console.log(harryFirstName, harryLastName, harryAge);
 
 1. Defining methods
 
-    - `this` in JS is similar to `self` in python
-    - `this` does not have to be passed
+   - `this` in JS is similar to `self` in python
+   - `this` does not have to be passed
 
-    e.g.
+   e.g.
 
-    ```js
-    const harry = {
-        birthYear: 1991,
-        calcAge : function () {
-            return 2037 - this.birthYear
-        }
-    }
-    ```
+   ```js
+   const harry = {
+     birthYear: 1991,
+     calcAge: function () {
+       return 2037 - this.birthYear;
+     },
+   };
+   ```
 
 2. Executing method
 
-    e.g.
+   e.g.
 
-    ```js
-    harry.calcAge(~arguments~)
-    ```
+   ```js
+   harry.calcAge(~arguments~)
+   ```
 
 ### [🌟] Functions
 
 1. `Object.assign(~Object1~, ~Object2~)`
-    - combines 2 objects into a new one that has a different memory address but the same properties as its predecessors
-    - however, this only creates a shallow copy, not a deep clone as in objects inside the new object and its predecessor still have the same memory address
-    - to create a deep clone, the use of an external library is needed
+
+   - combines 2 objects into a new one that has a different memory address but the same properties as its predecessors
+   - however, this only creates a shallow copy, not a deep clone as in objects inside the new object and its predecessor still have the same memory address
+   - to create a deep clone, the use of an external library is needed
 
 2. `Object.keys(~Object~)`
 
 3. `Object.values((~Object~))`
 
 4. `Object.entries(~Object~)`
-    - returns an array of a given object's own enumerable string-keyed property key-value pairs
-    - convert objects into maps
 
-    e.g.
+   - returns an array of a given object's own enumerable string-keyed property key-value pairs
+   - convert objects into maps
 
-    ```js
-    const scores = {
-        'Harry' : 3,
-        'Tony' : 5,
-    }
+   e.g.
 
-    const scoresMap = new Map(Object.entries(scores))
-    ```
+   ```js
+   const scores = {
+     Harry: 3,
+     Tony: 5,
+   };
+
+   const scoresMap = new Map(Object.entries(scores));
+   ```
 
 ## ▷▷▷▷▷ C16: Sets ◁◁◁◁◁
 
@@ -1745,7 +1770,8 @@ console.log(harryFirstName, harryLastName, harryAge);
 | [🌟] When should sets be used? |
 
 1. Better performance
-    - up to 10x faster
+
+   - up to 10x faster
 
 2. Keys can have any data type; not limited to string type
 
@@ -1764,25 +1790,29 @@ console.log(harryFirstName, harryLastName, harryAge);
 ### [🌟] Properties {16-properties}
 
 1. `.size`
-    - number of elements in a set
+   - number of elements in a set
 
 ### [🌟] Methods {16-methods}
 
 1. `.has(~element~)`
-    - checks whether the element is present in the set
+
+   - checks whether the element is present in the set
 
 2. `.add(~element~)`
-    - adds the element into the set
+
+   - adds the element into the set
 
 3. `.delete`
-    - deletes the element from the set
+
+   - deletes the element from the set
 
 4. `.clear()`
-    - clears the set
+
+   - clears the set
 
 5. `.foreach(~callbackFunction~)`
-    - per iteration, it will pass `(value, _ : ~throwawayVar~ , array)` in that order as args
-    - <> Array Methods [`.foreach` VS for-loop]
+   - per iteration, it will pass `(value, _ : ~throwawayVar~ , array)` in that order as args
+   - <> Array Methods [`.foreach` VS for-loop]
 
 ## ▷▷▷▷▷ C17: Maps ◁◁◁◁◁
 
@@ -1790,7 +1820,7 @@ console.log(harryFirstName, harryLastName, harryAge);
 - take note that for object keys to work, the key used to store and retrieve the value must have the same memory address
 
   [*syntax*]
-  
+
 ```js
 new Map = [] // Preferred when more key-value pairs are to be added
 
@@ -1805,12 +1835,12 @@ new Map([
 
 1. `.set(~key~, ~value~)` // returns the updated map \* can be chained
 
-    e.g.
+   e.g.
 
-    ```js
-    const rest = new Map();
-    rest.set(1, 'Firenze, Italy').set('name', 'Classico Italiano');
-    ```
+   ```js
+   const rest = new Map();
+   rest.set(1, "Firenze, Italy").set("name", "Classico Italiano");
+   ```
 
 2. `.get(~key~)` // returns corresponding value
 
@@ -1825,11 +1855,11 @@ new Map([
 7. `.entries()`
 
 8. `hasOwnProperty()`
-    TODO: In OOP Section
+   TODO: In OOP Section
 
 9. `.foreach(~callbackFunction~)`
-    - per iteration, it will pass `(value, key, map)` in that order as args
-    - <> Array Methods [`.foreach` VS for-loop]
+   - per iteration, it will pass `(value, key, map)` in that order as args
+   - <> Array Methods [`.foreach` VS for-loop]
 
 ## ▷▷▷▷▷ C18: Date ◁◁◁◁◁
 
@@ -1847,53 +1877,54 @@ new Map([
 
 1. Recommended
 
-    e.g.
+   e.g.
 
-    ```js
-    new Date(~year~, ~month~, ~date~, ~hours~, ~minutes~, ~seconds~)
-    ```
+   ```js
+   new Date(~year~, ~month~, ~date~, ~hours~, ~minutes~, ~seconds~)
+   ```
 
-    e.g. [Using a std string]
+   e.g. [Using a std string]
 
-    ```js
-    new Date('2019-11-01T13:15:33.035Z')
-    ```
+   ```js
+   new Date("2019-11-01T13:15:33.035Z");
+   ```
 
 2. Current day
-    - the current time
-    e.g.
 
-    ```js
-    new Date()
-    ```
+   - the current time
+     e.g.
+
+   ```js
+   new Date();
+   ```
 
 3. Initial unix time
 
-    e.g.
+   e.g.
 
-    ```js
-    new Date(0)
-    ```
+   ```js
+   new Date(0);
+   ```
 
 4. Following day
 
-    e.g.
+   e.g.
 
-    ```js
-    new Date(3 * 24 * 60 * 1000) // 3 Days after initial unix time
-    ```
+   ```js
+   new Date(3 * 24 * 60 * 1000); // 3 Days after initial unix time
+   ```
 
 5. Timestamp
-    e.g.
+   e.g.
 
-    ```js
-    new Date(1674747403615)
-    ```
+   ```js
+   new Date(1674747403615);
+   ```
 
 ### [🌟] Functions {18-functions}
 
 1. `Date.now()`
-    - returns the current time
+   - returns the current time
 
 ### [🌟] Methods {18-methods}
 
@@ -1912,12 +1943,15 @@ new Map([
 7. `.getSeconds()`
 
 8. `.toIOString()`
-    - converts date object to a std date string
+
+   - converts date object to a std date string
 
 9. `.getTime()`
-    - get timestamp i.e. miliseconds passed since initial unix time
+
+   - get timestamp i.e. miliseconds passed since initial unix time
 
 10. `.setFullYear()`
+
     - changes the FullYear in date object
 
 11. `.setMonth()`
@@ -1945,47 +1979,49 @@ calcDaysPassed(new Date(2024, 11, 24), new Date(2024, 11, 28));
 ### [🌟] Internationalization
 
 1. Dates
-    - Use `Intl.DateTimeFormat(~locale~, ...)`
-    - `locale` : e.g. en-US, en-UK
-    - `...` : other config options
 
-    e.g.
+   - Use `Intl.DateTimeFormat(~locale~, ...)`
+   - `locale` : e.g. en-US, en-UK
+   - `...` : other config options
 
-    ```js
-        const now = new Date();
+   e.g.
 
-        // Config
-        const options = {
-            hour: 'numeric',
-            minute: 'numeric',
-            day: 'number',
-            month: 'long',
-            year: 'numeric',
-            weekday: 'long'
-        }
+   ```js
+   const now = new Date();
 
-        // Finding locale from browser
-        const locale = navigator.language
+   // Config
+   const options = {
+     hour: "numeric",
+     minute: "numeric",
+     day: "number",
+     month: "long",
+     year: "numeric",
+     weekday: "long",
+   };
 
-        console.log(new Intl.DateTimeFormat(locale, options).format(now))
-    ```
+   // Finding locale from browser
+   const locale = navigator.language;
+
+   console.log(new Intl.DateTimeFormat(locale, options).format(now));
+   ```
 
 2. Int
-    - Use `Intl.NumberFormat(~locale~, ~options~)`
-    - [Options on MDN Web Dev](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat)
 
-    e.g.
+   - Use `Intl.NumberFormat(~locale~, ~options~)`
+   - [Options on MDN Web Dev](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat)
 
-    ```js
-        const num = 349238.342;
+   e.g.
 
-        const options = {
-            style: 'unit', // 'unit', 'percent' or 'currency'
-            unit: 'celsius',
-        };
+   ```js
+   const num = 349238.342;
 
-        console.log(new Intl.NumberFormat(navigator.language, options).format(num))
-    ```
+   const options = {
+     style: "unit", // 'unit', 'percent' or 'currency'
+     unit: "celsius",
+   };
+
+   console.log(new Intl.NumberFormat(navigator.language, options).format(num));
+   ```
 
 ## ▷▷▷▷▷ C19: Timers ◁◁◁◁◁
 
@@ -1994,28 +2030,36 @@ calcDaysPassed(new Date(2024, 11, 24), new Date(2024, 11, 28));
 ### [🌟] Functions {19-timers}
 
 1. `setTimeout(~callbackFunction~, ~waitTime~, ~args~)`
-    - schedules the callback function to be executed once after a set amount of time
 
-    e.g.
+   - schedules the callback function to be executed once after a set amount of time
 
-    ```js
-    const meeting = ["Meet-up with friends", "18:00" ];
-    const reminder = setTimeout((event, time) => console.log(`${event} is coming up at ${time}`), 1000, ...meeting);
-    ```
+   e.g.
+
+   ```js
+   const meeting = ["Meet-up with friends", "18:00"];
+   const reminder = setTimeout(
+     (event, time) => console.log(`${event} is coming up at ${time}`),
+     1000,
+     ...meeting
+   );
+   ```
 
 2. `clearTimeout()`
-    - removes the timeout function assigned to the variable
 
-    e.g.
+   - removes the timeout function assigned to the variable
 
-    ```js
-    reminder;
+   e.g.
 
-    if (meeting[0].split(' ').includes("Meet-up")) {clearTimeout(reminder)} // no output in console
-    ```
+   ```js
+   reminder;
+
+   if (meeting[0].split(" ").includes("Meet-up")) {
+     clearTimeout(reminder);
+   } // no output in console
+   ```
 
 3. `setTimeout(~callbackFunction~, ~delay~)`
-    - executes `~callbackFunction~` every `~delay~`
+   - executes `~callbackFunction~` every `~delay~`
 
 ## ▷▷▷▷▷ C20: DOM Manipulation ◁◁◁◁◁
 
@@ -2080,112 +2124,123 @@ calcDaysPassed(new Date(2024, 11, 24), new Date(2024, 11, 28));
 ### [🌟] Event Handlers
 
 1. `.addEventListener(~event~, ~callbackFunction~, ~capturingOrBubbling~)`
-    - `~capturingOrBubbling~` captures the event at the capturing or bubbling phase
 
-    e.g. [Passing "argument" into handler]
+   - `~capturingOrBubbling~` captures the event at the capturing or bubbling phase
 
-    ```js
-    addEventListener(~event~, ~callbackFunction~.bind(~args~))
-    // this keyword refers to the args
-    ```
+   e.g. [Passing "argument" into handler]
+
+   ```js
+   addEventListener(~event~, ~callbackFunction~.bind(~args~))
+   // this keyword refers to the args
+   ```
 
 2. `.removeEventListener(~event~, ~callbackFunction~)`
 
 3. Writing js in html file
-    - DON'T use
 
-    e.g.
+   - DON'T use
 
-    ```html
-        <h1 onclick="alert('HTML alert')">
+   e.g.
 
-        </h1>
-    ```
+   ```html
+   <h1 onclick="alert('HTML alert')"></h1>
+   ```
 
 ### [🌟] Event Types
 
 1. `click`
-    e.g. [Button]
+   e.g. [Button]
 
-    ```js
-        document.querySelector('.check').addEventListener('.click', function() {
-            ...
-        })
-    ```
+   ```js
+       document.querySelector('.check').addEventListener('.click', function() {
+           ...
+       })
+   ```
 
 2. `keydown`/`keyup`/`keypress`
-    - considered global events
-        e.g. [Keydown]
 
-    ```js
-    document.addEventListener('keydown', function(e) {
-        console.log(e.key);
-    })
-    // the e object contains all the information about the vent
-    ```
+   - considered global events
+     e.g. [Keydown]
+
+   ```js
+   document.addEventListener("keydown", function (e) {
+     console.log(e.key);
+   });
+   // the e object contains all the information about the vent
+   ```
 
 3. `mouseenter`
-    - happens when the  mouse clicks on the element
+
+   - happens when the mouse clicks on the element
 
 4. `mouseover`
-    - similar to 'mouseenter' except that it bubbles
+
+   - similar to 'mouseenter' except that it bubbles
 
 5. `mouseleave`
-    - happens when the mouse leaves
+
+   - happens when the mouse leaves
 
 6. `mouseout`
-    - similar to 'mouseleave' except that it bubbles
+
+   - similar to 'mouseleave' except that it bubbles
 
 7. `scroll`
-    - available on the window
-    - poor performance as it triggers every time a small adjustment is made
+
+   - available on the window
+   - poor performance as it triggers every time a small adjustment is made
 
 8. `DOMContentLoaded`
-    - happens when HTML is parsed and DOM truee built
 
-    e.g.
+   - happens when HTML is parsed and DOM truee built
 
-    ```js
-    document.addEventListener('DOMContentLoaded', function (e) {
-        console.log('HTML pased and DOM tree built', e);
-    });
-    ```
+   e.g.
+
+   ```js
+   document.addEventListener("DOMContentLoaded", function (e) {
+     console.log("HTML pased and DOM tree built", e);
+   });
+   ```
 
 9. 'load'
-    - happens when page is completely loaded
 
-    e.g.
+   - happens when page is completely loaded
 
-    ```js
-    window.addEventListener('load', function (e) {
-        console.log('Page fully loaded', e);
-    });
-    ```
+   e.g.
+
+   ```js
+   window.addEventListener("load", function (e) {
+     console.log("Page fully loaded", e);
+   });
+   ```
 
 ### [🌟] [🌟] Event Propagation
 
 Phases
 
 1. Capturing Phase
-    - When an event occurs, the event is passed down the DOM tree
+
+   - When an event occurs, the event is passed down the DOM tree
 
 2. Target Phase
-    - the event passes through all the parent nodes and eventually reaches the target phase
+
+   - the event passes through all the parent nodes and eventually reaches the target phase
 
 3. Bubbling Phase
-    - the event passes through all the parent nodes and travels all the way up
-    - Implication: If eventListeners are attached to both the parent and child node, both callback functions will be called
 
-    e.g. [Illustration of phases]
+   - the event passes through all the parent nodes and travels all the way up
+   - Implication: If eventListeners are attached to both the parent and child node, both callback functions will be called
 
-    ```js
-    document.querySelector('.nav\_\_link').addEventListener('click', function(e) {
-        console.log(e.target, e.currentTarget);
-        console.log(this == e.currentTarget); // true
-    })
-    // event.target is the "target" element that initiated the event, it doesn't change through the bubbling process
-    // this is the "current" element, the one that has a currently running hander on it
-    ```
+   e.g. [Illustration of phases]
+
+   ```js
+   document.querySelector(".nav__link").addEventListener("click", function (e) {
+     console.log(e.target, e.currentTarget);
+     console.log(this == e.currentTarget); // true
+   });
+   // event.target is the "target" element that initiated the event, it doesn't change through the bubbling process
+   // this is the "current" element, the one that has a currently running hander on it
+   ```
 
 ### [🌟] [🌟] Event Delegation
 
@@ -2196,15 +2251,15 @@ Phases
 e.g. [Implementing page navigation]
 
 ```js
-    document.querySelector('.nav\_\_links').addEventListener('click', function(e) {
-    e.preventDefault(); // prevent default href scrolling
+document.querySelector(".nav__links").addEventListener("click", function (e) {
+  e.preventDefault(); // prevent default href scrolling
 
-            // Matching strategy: ensures that it is the intended element
-            if (e.target.classList.contains('nav__link')) {
-                const id = e.target.getAttribute('href');
-                document.querySelector(id).scrollIntoView({behaviour : 'smooth'});
-            }
-        })
+  // Matching strategy: ensures that it is the intended element
+  if (e.target.classList.contains("nav__link")) {
+    const id = e.target.getAttribute("href");
+    document.querySelector(id).scrollIntoView({ behaviour: "smooth" });
+  }
+});
 ```
 
 ### [🌟] Working with Document
@@ -2212,98 +2267,112 @@ e.g. [Implementing page navigation]
 - this object is the root document object itself
 
 1. `.querySelector('.~element~')` // returns the element node
-    - selects a specific element
+
+   - selects a specific element
 
 2. `.querySelectorAll('.~elementIdentifier~')` // returns a node list
-    - selects all elements that is identifiable by the same elementIdentifier
+
+   - selects all elements that is identifiable by the same elementIdentifier
 
 3. `.getelementById(~id~)` OR `.querySelector('#~Id~')`
-    - selects the element with that unique id
+
+   - selects the element with that unique id
 
 4. `.getElementByClassName(~className~)`
-    - selects all elements with that className
+
+   - selects all elements with that className
 
 5. `.createElement(~element~)`
 
 6. `.documentElement`
-    - returns the `Element` object that is the root element of the document
 
-    a. `.clientHeight`
-        - height of viewport
+   - returns the `Element` object that is the root element of the document
 
-    b. `.clientWidth`
-        - width of viewport
+   a. `.clientHeight` - height of viewport
+
+   b. `.clientWidth` - width of viewport
 
 ### [🌟] [🌟] Working with Elements |
 
 1. `.insertAdjacentHTML(~position~)`
-    - ~position~ : 'beforebegin', 'afterbegin', 'beforeend', 'afterend'
-    - adds new HTML elements
+
+   - ~position~ : 'beforebegin', 'afterbegin', 'beforeend', 'afterend'
+   - adds new HTML elements
 
 2. `.innerHTML = '...'`
-    - changes the HTML written under the element
+
+   - changes the HTML written under the element
 
 3. [❗] `.classList`
-    a. `.remove(...~className~)`
-        - do not use '.'
-        - removes the class assigned to the element
+   a. `.remove(...~className~)` - do not use '.' - removes the class assigned to the element
 
-    b. `.add(...~className~)`
-        - assigns the class to the element
+   b. `.add(...~className~)` - assigns the class to the element
 
-    c. `toggle(~className~)`
-        - if class is not assigned, assign it
-        - if class is already assigned, remove it
+   c. `toggle(~className~)` - if class is not assigned, assign it - if class is already assigned, remove it
 
-    d. `contains(~className~)`
-        - checks whether element has the class
+   d. `contains(~className~)` - checks whether element has the class
 
 4. `.clasName`
-    - DON'T use: it overwrites all the classes in the element
+
+   - DON'T use: it overwrites all the classes in the element
 
 5. `.src = ~FilePath~`
-    - specific for certain HTML elements
+
+   - specific for certain HTML elements
 
 6. [❗] `.style.~cssStyle~ = ...`
-    - changes the css style sheet
-    - console.log(~element~.style.~cssStyle~) only returns a value if it is an inline style; does not return a value if style is hidden inside classes
-        a. .setProperty()
-        - sets a new value for a property on a CSS style declaration object
+
+   - changes the css style sheet
+   - console.log(~element~.style.~cssStyle~) only returns a value if it is an inline style; does not return a value if style is hidden inside classes
+     a. .setProperty()
+     - sets a new value for a property on a CSS style declaration object
 
 7. `.getComputedStyle(~element~).color`
-    - access all the styles as displayed by the browser
+
+   - access all the styles as displayed by the browser
 
 8. `.getAttribute(~attribute~)`
-    - access non-standard attributes
-    - special cases
-        a. `src`
-        - returns rel instead of abs path
 
-        b. `href`
-        - returns rel instead of abs path
+   - access non-standard attributes
+   - special cases
+     a. `src`
+
+     - returns rel instead of abs path
+
+     b. `href`
+
+     - returns rel instead of abs path
 
 9. `.setAttribute(~attribute~, ~value~)`
-    - changes value of the specified attribute
+
+   - changes value of the specified attribute
 
 10. `.remove()`
+
     - deletes the elements
 
 11. `.removeChild(~parentNode~)`
+
     - removes child node of parent
 
 12. `.append()`
+
     - creates and/or move element to the top
 
 13. `.prepend()`
+
     - creates and/or move element to the bottom
 
 14. `.cloneNode(~toCloneAllChild~)`
+
     - `~toCloneAllChild~` : if true, all the child nodes will be cloned as well
 
 15. `.getBoundingClientRect()`
+
     - returns a DOMRect object providing information about the size of an element and its position relative to the viewport
 
 16. [❗] `.scrollIntoView({behaviour : 'smooth' })`
+
     - scrolls the page downwards such that the element is in view
     - only supported in modern browser
 
@@ -2315,14 +2384,17 @@ e.g. [Implementing page navigation]
 [ Going Downwards ]
 
 1. `.querySelector(~selectors~)`
-    - returns the first element that is a descendent of the element on which it is invoked that matches the specified group of selectors
+
+   - returns the first element that is a descendent of the element on which it is invoked that matches the specified group of selectors
 
 2. `.childNodes`
-    - returns all the child nodes: text, comment etc.
+
+   - returns all the child nodes: text, comment etc.
 
 3. `.children`
-    - returns all the child elements
-    - only works for direct children
+
+   - returns all the child elements
+   - only works for direct children
 
 4. `.firstElementChild`
 
@@ -2335,7 +2407,7 @@ e.g. [Implementing page navigation]
 2. `.parentElement`
 
 3. `.closest(~selector~)`
-    - returns the node that matches the specified selectors
+   - returns the node that matches the specified selectors
 
 [ Going Sideways ]
 
@@ -2348,17 +2420,19 @@ e.g. [Implementing page navigation]
 4. `.nextSibling`
 
 5. `.parentElement.children`
-    - to find all children
+   - to find all children
 
 ### [🌟] Working with window
 
 1. `.window.pageXOffset`
-    - the x-coordinates of where the page is
-    - for scrolling
+
+   - the x-coordinates of where the page is
+   - for scrolling
 
 2. `.window.pageYOffset`
-    - the y-coordinates of where the page is
-    - for scrolling
+
+   - the y-coordinates of where the page is
+   - for scrolling
 
 3. Extent of scroll effect
 
@@ -2394,31 +2468,36 @@ observer.observe(~observedTarget~)
 [ Perimeters ]
 
 1. `Options` object
-    - `~root~` can be either the ~element~ or null [viewport]
-    - `~threshold~`
-        #1: `0`
-        - it will be triggered when it first comes into view and also when it disappears from view
 
-        #2: `1`
-        - when 100% of the target is visible
+   - `~root~` can be either the ~element~ or null [viewport]
+   - `~threshold~`
+     #1: `0`
 
-        #3: `[...]`
-        - an array of percentage
-        - the `~callbackFunction~` will be called when either one of the percentage is reached
-    - `~rootMargin~` is a the set number of pixels that will be applied outside of our target element
+     - it will be triggered when it first comes into view and also when it disappears from view
 
-    e.g.
+     #2: `1`
 
-    ```js
-        const options = {
-            root: null,
-            threshold: 0.1,
-            rootMargin: '-90px',
-        }
-    ```
+     - when 100% of the target is visible
+
+     #3: `[...]`
+
+     - an array of percentage
+     - the `~callbackFunction~` will be called when either one of the percentage is reached
+
+   - `~rootMargin~` is a the set number of pixels that will be applied outside of our target element
+
+   e.g.
+
+   ```js
+   const options = {
+     root: null,
+     threshold: 0.1,
+     rootMargin: "-90px",
+   };
+   ```
 
 2. Callback Function
-    - called when the target element intersects the root at the specified threshold
+   - called when the target element intersects the root at the specified threshold
 
 [ Functions ]
 
@@ -2437,38 +2516,41 @@ observer.observe(~observedTarget~)
 ### [🌟] [🌟] [🌟] Script Loading
 
 1. Normal Script End of Body
-    - Scripts are fetched and executed after the HTML is completely parsed
-    - [❗] Use if old browsers need to be supported
 
-    e.g.
+   - Scripts are fetched and executed after the HTML is completely parsed
+   - [❗] Use if old browsers need to be supported
 
-    ```html
-    <script src="script.js"></script>
-    ```
+   e.g.
+
+   ```html
+   <script src="script.js"></script>
+   ```
 
 2. `async` in Head
-    - Scripts are fetched asynchronously and executed immediately
-    - Usually the DOMContentLoaded event waits for all scripts to execute, except for async scripts. So, DOMContentLoaded does not wait for an async script
-    - Scripts are not guranteed to execute in order
-    - [❗] Use for 3rd-party scripts where order doesn't matter (e.g. Google Analytics)
 
-    e.g.
+   - Scripts are fetched asynchronously and executed immediately
+   - Usually the DOMContentLoaded event waits for all scripts to execute, except for async scripts. So, DOMContentLoaded does not wait for an async script
+   - Scripts are not guranteed to execute in order
+   - [❗] Use for 3rd-party scripts where order doesn't matter (e.g. Google Analytics)
 
-    ```html
-    <script async src="script.js"></script>
-    ```
+   e.g.
+
+   ```html
+   <script async src="script.js"></script>
+   ```
 
 3. `defer` in Head
-    - Scripts are fetched asynchronously and executed after the HTML is completely parsed
-    - DOMContentLoaded event fires after defer script is executed
-    - Scripts are executed in order
-    - [❗] This is overall the best solution! Use for your own scripts, and when order matters (e.g. including a library)
 
-    e.g.
+   - Scripts are fetched asynchronously and executed after the HTML is completely parsed
+   - DOMContentLoaded event fires after defer script is executed
+   - Scripts are executed in order
+   - [❗] This is overall the best solution! Use for your own scripts, and when order matters (e.g. including a library)
 
-    ```html
-    <script defer src="script.js"></script>
-    ```
+   e.g.
+
+   ```html
+   <script defer src="script.js"></script>
+   ```
 
 ## ▷▷▷▷▷ C21: Object Oriented Programming ◁◁◁◁◁
 
@@ -2479,32 +2561,36 @@ observer.observe(~observedTarget~)
 ### [🌟] Principles of OOP
 
 1. Abstraction
-    - ignoring or hiding details that don't matter, allowing us to get an overview perspective of the thing we're implementing, instead of messing with details that don't really matter to our implementation
+
+   - ignoring or hiding details that don't matter, allowing us to get an overview perspective of the thing we're implementing, instead of messing with details that don't really matter to our implementation
 
 2. Encapsulation
-    - keeping properties and methods private inside the class, so they are not accessible from outside the class. Some methods can't be exposed as a public interface (API)
-    - prevents external code from accidentally manipulating internal properties/state
-    - allows to change internal implementation without the risk of breaking external code
+
+   - keeping properties and methods private inside the class, so they are not accessible from outside the class. Some methods can't be exposed as a public interface
+   - prevents external code from accidentally manipulating internal properties/state
+   - allows to change internal implementation without the risk of breaking external code
 
 3. Inheritance
-    - making all properties and methods of a certain class available to a child class, forming a hierachical relationship between classes. This allows us to reuse common logic and to model real-world relationships
+
+   - making all properties and methods of a certain class available to a child class, forming a hierachical relationship between classes. This allows us to reuse common logic and to model real-world relationships
 
 4. Polymorphism
-    - a child class can overwirte a method it inherited form a parent class
+   - a child class can overwirte a method it inherited form a parent class
 
 ### [🌟] OOP in JavaScript
 
 1. "Classical OOP": Classes
-    - objects are instantiated from a class, which functions like a blueprint
+
+   - objects are instantiated from a class, which functions like a blueprint
 
 2. OOP in JS: Prototypes
-    - objects are linked to a prototype object
-    - Prototypical inheritance: the prototype contains methods that are accessible to all objects linked to that prototype
-    - Behavior is delegated to the linked prototype object (the methods are not copied, simply delegated when called)
-    - How are objects created?
-        a. Constructor function
-        b. ES6 Classes
-        c. `Object.create()`
+   - objects are linked to a prototype object
+   - Prototypical inheritance: the prototype contains methods that are accessible to all objects linked to that prototype
+   - Behavior is delegated to the linked prototype object (the methods are not copied, simply delegated when called)
+   - How are objects created?
+     a. Constructor function
+     b. ES6 Classes
+     c. `Object.create()`
 
 ### [🌟] `new` Keyword
 
@@ -2512,13 +2598,13 @@ observer.observe(~observedTarget~)
 
   e.g.
 
-    ```js
-    const Person = function(firstName, birthYear) {
-        this.firstName = firstName;
-        this.birthYear = birthYear;
-    }
-    const harry = new Person('Harry', 2006)
-    ```
+  ```js
+  const Person = function (firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  };
+  const harry = new Person("Harry", 2006);
+  ```
 
 - [❗] Do not put any functions inside the constructor function as each and every instance will have the function and that will affect performance instead define it inside the prototype
 
@@ -2538,17 +2624,17 @@ observer.observe(~observedTarget~)
 e.g. [Defining object functions]
 
 ```js
-Person.prototype.calcAge = function() {
-    console.log(2037 - this.birthYear)
+Person.prototype.calcAge = function () {
+  console.log(2037 - this.birthYear);
 };
-jonas.calcAge()
+jonas.calcAge();
 ```
 
 e.g. [Defining common attributes]
 
 ```js
-Person.prototype.species = 'Homo Sapiens';
-console.log(jonas.species) // returns 'Homo Sapiens'
+Person.prototype.species = "Homo Sapiens";
+console.log(jonas.species); // returns 'Homo Sapiens'
 ```
 
 ### [🌟] [🌟] Prototype and Inheritance
@@ -2593,7 +2679,7 @@ e.g.
     calAge() {
         console.log(2037 - this.birthYear);
     }
-    
+
     // the constructor function must be syntaxed this way
     // any functions defined outside of the constructor function will be on the prototype
 }
@@ -2610,10 +2696,11 @@ e.g.
 - for that, we use get and set
 
 1. get
-    - to define a getter method to get the propoerty value, but they do not calculate the propoerty's value until it is accessed
+
+   - to define a getter method to get the propoerty value, but they do not calculate the propoerty's value until it is accessed
 
 2. set
-    - to define a setter method to set the property value
+   - to define a setter method to set the property value
 
 ### [🌟] Static Methods
 
@@ -2625,9 +2712,9 @@ e.g. [E36 Class]
 
 ```js
 class Student {
-    static attendence() {
-        console.log("I'm here!")
-    }
+  static attendence() {
+    console.log("I'm here!");
+  }
 }
 ```
 
@@ -2642,19 +2729,23 @@ Student.attendence() = function() {
 ### [🌟] Functions & Methods
 
 1. `Object.create(~prototype~)`
-    - the easiest and most striaghtforward of linking an object to a prototype object - used for class inheritance
+
+   - the easiest and most striaghtforward of linking an object to a prototype object - used for class inheritance
 
 2. `instanceof ~instance~`
-    - checks whether it is an instance of a class
+
+   - checks whether it is an instance of a class
 
 3. `.__proto__`
-    - returns the prototype of the object
+
+   - returns the prototype of the object
 
 4. `~objName~.isPrototypeOf(~instance~)`
-    - returns whether the instance has the same prototype as objName
+
+   - returns whether the instance has the same prototype as objName
 
 5. `.hasOwnProperty(~property~)`
-    - checks whether the property belongs to the object (true) or inherited from prototype (false)
+   - checks whether the property belongs to the object (true) or inherited from prototype (false)
 
 ## ▷▷▷▷▷ C22: How does JavaScript work? ◁◁◁◁◁
 
@@ -2689,50 +2780,53 @@ Student.attendence() = function() {
 ### [🌟] [🌟] CS: Compilation vs Interpretation
 
 1. What is Compilation?
-    - Entire code is converted into machine code at once, and written to a binary file that can be executed by a computer
 
-    ```text
-      [Program Running]
+   - Entire code is converted into machine code at once, and written to a binary file that can be executed by a computer
 
-           /|\   Step 2 : Execution
-            |    * can happen way after compilation
+   ```text
+     [Program Running]
 
-     [Portable File] * can be ran on any machine
+          /|\   Step 2 : Execution
+           |    * can happen way after compilation
 
-           /|\   Step 1 : Compilation
-            |
+    [Portable File] * can be ran on any machine
 
-      [Source Code]
-    ```
+          /|\   Step 1 : Compilation
+           |
+
+     [Source Code]
+   ```
 
 2. What is Interpretation?
-    - Interpreter runs through the source code and executes it line by line
 
-    ```text
-       [Program Running]
+   - Interpreter runs through the source code and executes it line by line
 
-           /|\   Step 1 : Execution line by line
-            |    * code still needs to be converted to machine code
+   ```text
+      [Program Running]
 
-        [Source Code]
-    ```
+          /|\   Step 1 : Execution line by line
+           |    * code still needs to be converted to machine code
+
+       [Source Code]
+   ```
 
 3. Just-in-time(JIT) Compilation
-    - Entire code is converted into machine code at once, then executed immediately
 
-    ```text
-    [Program Running]
+   - Entire code is converted into machine code at once, then executed immediately
 
-           /|\   Step 2 : Execution
-            |    * happens immediately
+   ```text
+   [Program Running]
 
-     [Machine Code] * NOT a portable file
+          /|\   Step 2 : Execution
+           |    * happens immediately
 
-           /|\   Step 1 : Compilation
-            |
+    [Machine Code] * NOT a portable file
 
-      [Source Code]
-    ```
+          /|\   Step 1 : Compilation
+           |
+
+     [Source Code]
+   ```
 
 ### [🌟] [🌟] JavaScript Runtime on browers
 
@@ -2775,10 +2869,11 @@ What's inside execution context
 - Generated during "creation phase", right before execution
 
 1. Variable Environemnt
-    - let, const and var declarations
-    - functions
-    - arguments object ( [❗] Not in arrow fn)
-        <> Argument Object
+
+   - let, const and var declarations
+   - functions
+   - arguments object ( [❗] Not in arrow fn)
+     <> Argument Object
 
 2. Scope chain
 
@@ -2793,8 +2888,8 @@ e.g.
 
 ```js
 const addExpr = function (a, b) {
-console.log(arguments) // using argument keyword
-}
+  console.log(arguments); // using argument keyword
+};
 ```
 
 ### [🌟] [🌟] Scoping and Scope
@@ -2810,20 +2905,20 @@ console.log(arguments) // using argument keyword
 
 1. Global Scope
 
-    - outside of any function or block
-    - variables declared in global scope are accessible everywhere
+   - outside of any function or block
+   - variables declared in global scope are accessible everywhere
 
 2. Function Scope
 
-    - variables are accessible only inside function, not outside
-    - also called local scope
+   - variables are accessible only inside function, not outside
+   - also called local scope
 
 3. Block Scope (ES6)
 
-    - variables are accessible Only inside block (block scoped)
-    - [❗] this only applies to let and const variables
-    - [❗] however, var variables are function-scoped, and they will be scoped to the current fn or global scope; ignore blocks
-    - Functions are also block scoped (only in strict mode)
+   - variables are accessible Only inside block (block scoped)
+   - [❗] this only applies to let and const variables
+   - [❗] however, var variables are function-scoped, and they will be scoped to the current fn or global scope; ignore blocks
+   - Functions are also block scoped (only in strict mode)
 
 ### [🌟] [🌟] Scope Chain
 
@@ -2839,24 +2934,26 @@ console.log(arguments) // using argument keyword
 Declarations
 
 1. Function
-    ✅Hoisted
-    💫Actual Value
-    🔍Block
+   ✅Hoisted
+   💫Actual Value
+   🔍Block
 
 2. var variables
-    ✅Hoisted
-    💫Undefined
-    - which is a major source of bugs; avoid using var
-    🔍Block
+   ✅Hoisted
+   💫Undefined
+
+   - which is a major source of bugs; avoid using var
+     🔍Block
 
 3. let and cost variables
-    ❌Hoisted
-    - Technically, yes. But not in practice
-    💫TDZ (Temporal Dead Zone) i.e. the region of the scope in which the variable is defined but can be used in any way; as if the var didn't exist
-    🔍Block
+   ❌Hoisted
+
+   - Technically, yes. But not in practice
+     💫TDZ (Temporal Dead Zone) i.e. the region of the scope in which the variable is defined but can be used in any way; as if the var didn't exist
+     🔍Block
 
 4. Function expressions and arrows
-    - depends if using var or let/const
+   - depends if using var or let/const
 
 ### [🌟] [🌟] 'this' keyword
 
@@ -2869,11 +2966,13 @@ Circumstances
 1. Method 'this' - object that is calling the method
 
 2. Simple Function call 'this'
-    - undefined (in strict mode)
-    - window (otherwise)
+
+   - undefined (in strict mode)
+   - window (otherwise)
 
 3. Arrow Function 'this'
-    - inherits 'this' keyword from parent
+
+   - inherits 'this' keyword from parent
 
 4. Event Listener 'this'
 

@@ -3,7 +3,7 @@
 ## ▷▷▷▷▷ HTML ◁◁◁◁◁
 
 - stands for Hyper Text Mark-up Language
-- ! + Tab automatically creates a html doc w basic config
+- `shift` `!` and `enter` automatically creates a html doc w basic config
 
 ### [🌟] HTML Tags
 
@@ -266,4 +266,5 @@ e.g. [*IDs*]
 1. Context - text, images, etc
 2. Padding - transparent area around the content, inside of the box
 3. Border - goes around the padding and the content
-4. Margin - space between boxes 5. Fill area - area that gets filled with background color or background image
+4. Margin - space between boxes
+5. Fill area - area that gets filled with background color or background image
