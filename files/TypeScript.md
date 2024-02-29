@@ -799,7 +799,7 @@ console.log(strings.toString());
 
 4. `Omit`
 
-   - `Omit` remoevs keys from an object type
+   - `Omit` removes keys from an object type
 
    e.g.
 
@@ -835,13 +835,44 @@ console.log(strings.toString());
    };
    ```
 
-6. `ReturnType`
+6. `Exclude`
+
+   - `Exclude` removes types from a union
+
+   e.g.
+
+   ```ts
+   type Primitive = string | number | boolean;
+   const value: Exclude<Primitive, string> = true; // a string cannot be used here since Exclude removed it from the type
+   ```
+
+7. `ReturnType`
 
    - `ReturnType` extracts the return type of a function type
 
-7. `Parameters`
+   e.g.
+
+   ```ts
+   type PointGenerator = () => { x: number; y: number };
+   const point: ReturnType<PointGenerator> = {
+     x: 10,
+     y: 20,
+   };
+   ```
+
+8. `Parameters`
 
    - `Parameters` extracts the parameter types of a function types as an array
 
-8. `Readonly`
+   e.g.
+
+   ```ts
+   type PointPrinter = (p {x: number; y: number;}) => void;
+   const point : Parameters<PointPrinter>[0] = {
+    x: 10,
+    y: 20
+   }
+   ```
+
+9. `Readonly`
    - `Readonly` creates a new type where all properties are readonly, meaning they cannot be modified once assigned a value
